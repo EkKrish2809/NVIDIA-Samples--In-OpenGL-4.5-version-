@@ -12,6 +12,7 @@
 
 # Ignore CMake generated files
 CMakeFiles/
+ref/
 CMakeCache.txt
 cmake_install.cmake
 Makefile
