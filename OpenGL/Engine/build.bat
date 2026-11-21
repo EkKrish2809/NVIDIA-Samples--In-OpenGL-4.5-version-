@@ -1,16 +1,21 @@
-del ./bin/win32/*.obj
+del bin\win32\*.obj
 del *.exe
 
-cl.exe /Fo".\\bin\\" /c /EHsc /I C:\glew\include main.cpp ^
+cl.exe /Fo".\\bin\\win32\\" /c /EHsc /I C:\glew\include main.cpp ^
 window_manager.cpp ^
 Logger.cpp ^
+src\Renderer.cpp ^
+src\first_scene.cpp ^
 includes\imgui\imgui.cpp ^
 includes\imgui\imgui_impl_opengl3.cpp ^
 includes\imgui\imgui_impl_win32.cpp ^
 includes\imgui\imgui_tables.cpp ^
 includes\imgui\imgui_widgets.cpp ^
 includes\imgui\imgui_demo.cpp ^
-includes\imgui\imgui_draw.cpp 
+includes\imgui\imgui_draw.cpp ^
+includes\utils\shader_helper.cpp 
 @REM src\*.cpp ^
 
-link /out:Engine.exe bin\*.obj /LIBPATH:C:\glew\lib\Release\x64 user32.lib gdi32.lib glew32.lib OpenGL32.lib /SUBSYSTEM:WINDOWS 
+link /out:Engine.exe bin\win32\*.obj /LIBPATH:C:\glew\lib\Release\x64 user32.lib gdi32.lib glew32.lib OpenGL32.lib /SUBSYSTEM:WINDOWS 
+
+Engine.exe

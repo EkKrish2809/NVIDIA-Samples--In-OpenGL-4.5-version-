@@ -27,17 +27,19 @@
 
 #include <memory.h> // for memset()
 
-// IMGUI header files
-#include "includes/imgui/imgui.h"
-#include "includes/imgui/imgui_impl_opengl3.h"
-#ifdef __GNUC__
-#include "includes/imgui/imgui_impl_x11.h"
-#else
-#include "includes/imgui/imgui_impl_win32.h"
-#endif
+// // IMGUI header files
+// #include "includes/imgui/imgui.h"
+// #include "includes/imgui/imgui_impl_opengl3.h"
+// #ifdef __GNUC__
+// #include "includes/imgui/imgui_impl_x11.h"
+// #else
+// #include "includes/imgui/imgui_impl_win32.h"
+// #endif
 
 // logger header files
 #include "Logger.h"
+// #include "camera.h"
+#include "common.h"
 
 #define WIN_WIDTH 800
 #define WIN_HEIGHT 600
@@ -47,7 +49,8 @@
 #else
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 #endif
-extern logger g_logger;
+
+// logger g_logger;
 
 class window_manager
 {

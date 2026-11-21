@@ -18,14 +18,25 @@ void Renderer::render()
 {
     m_scene->update();
     m_scene->draw();
-    m_scene->render_ui();
-    m_scene->process_events();
 }
 
-void Renderer::init()
+void Renderer::process_events(XEvent event)
+{
+    m_scene->process_events(event);
+
+}
+
+void Renderer::render_ui()
+{
+    m_scene->render_ui();
+}
+
+bool Renderer::init()
 {
     m_scene = new first_scene();
     m_scene->init();
+
+    return true;
 }
 
 void Renderer::uninit()

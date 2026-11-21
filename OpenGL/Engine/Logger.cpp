@@ -1,5 +1,7 @@
 #include  "Logger.h"
 
+logger g_logger;
+
 logger::logger(){}
 
 void logger::init_logger(const std::string &log_filename, const std::string &shader_filename)
@@ -49,6 +51,24 @@ void logger::log(LogType level, const std::string message, ...) {
         char buffer[1024];
         vsnprintf(buffer, sizeof(buffer), message.c_str(), args);
         logFile << buffer << std::endl;
+    } else {
+        std::cerr << "[" << get_timestamp() << "] [" << log_level_to_string(level) << "] " ;
+        char buffer[1024];
+        vsnprintf(buffer, sizeof(buffer), message.c_str(), args);
+        std::cerr << buffer << std::endl;
+    }
+}
+
+void logger::log_shader(LogType level, const std::string message, ...) {
+    va_list args;
+    va_start(args, message);
+    // char buffer[1024];
+    std::lock_guard<std::mutex> guard(logMutex);
+    if (shaderFile.is_open()) {
+        shaderFile << "[" << get_timestamp() << "] [" << log_level_to_string(level) << "] " ;
+        char buffer[1024];
+        vsnprintf(buffer, sizeof(buffer), message.c_str(), args);
+        shaderFile << buffer << std::endl;
     } else {
         std::cerr << "[" << get_timestamp() << "] [" << log_level_to_string(level) << "] " ;
         char buffer[1024];

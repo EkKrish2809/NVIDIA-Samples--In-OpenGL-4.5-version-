@@ -14,9 +14,11 @@ public:
     ~Renderer();
 
     void render();
-    void init();
+    void render_ui();
+    bool init();
     void uninit();
     void key_callback(int key, int scancode, int action, int mods);
+    void process_events(XEvent);
 
 private:
     scene *m_scene;

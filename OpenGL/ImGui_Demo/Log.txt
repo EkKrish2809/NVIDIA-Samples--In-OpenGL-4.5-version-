@@ -1,36 +1,22 @@
-Found number of FBConfigs are 24
-VisualInfo = 0x33 found SampleBuffers = 0 and samples = 0
-VisualInfo = 0x1650 found SampleBuffers = 0 and samples = 0
-VisualInfo = 0x1768 found SampleBuffers = 0 and samples = 0
-VisualInfo = 0x1770 found SampleBuffers = 0 and samples = 0
-VisualInfo = 0x1682 found SampleBuffers = 1 and samples = 2
-VisualInfo = 0x1685 found SampleBuffers = 1 and samples = 2
-VisualInfo = 0x1802 found SampleBuffers = 1 and samples = 2
-VisualInfo = 0x1805 found SampleBuffers = 1 and samples = 2
-VisualInfo = 0x1683 found SampleBuffers = 1 and samples = 4
-VisualInfo = 0x1686 found SampleBuffers = 1 and samples = 4
-VisualInfo = 0x1803 found SampleBuffers = 1 and samples = 4
-VisualInfo = 0x1806 found SampleBuffers = 1 and samples = 4
-VisualInfo = 0x1684 found SampleBuffers = 1 and samples = 8
-VisualInfo = 0x1687 found SampleBuffers = 1 and samples = 8
-VisualInfo = 0x1804 found SampleBuffers = 1 and samples = 8
-VisualInfo = 0x1807 found SampleBuffers = 1 and samples = 8
-VisualInfo = 0x1649 found SampleBuffers = 0 and samples = 0
-VisualInfo = 0x1651 found SampleBuffers = 0 and samples = 0
-VisualInfo = 0x1769 found SampleBuffers = 0 and samples = 0
-VisualInfo = 0x1771 found SampleBuffers = 0 and samples = 0
-VisualInfo = 0x524 found SampleBuffers = 0 and samples = 0
-VisualInfo = 0x2117 found SampleBuffers = 0 and samples = 0
-VisualInfo = 0x2128 found SampleBuffers = 0 and samples = 0
-VisualInfo = 0x2129 found SampleBuffers = 0 and samples = 0
-visualId of bestVisualInfo is 0x1684
+Found number of FBConfigs are 10
+VisualInfo = 0x64 found SampleBuffers = 0 and samples = 0
+VisualInfo = 0x614 found SampleBuffers = 0 and samples = 0
+VisualInfo = 0x695 found SampleBuffers = 1 and samples = 2
+VisualInfo = 0x696 found SampleBuffers = 1 and samples = 2
+VisualInfo = 0x703 found SampleBuffers = 1 and samples = 4
+VisualInfo = 0x704 found SampleBuffers = 1 and samples = 4
+VisualInfo = 0x711 found SampleBuffers = 1 and samples = 8
+VisualInfo = 0x712 found SampleBuffers = 1 and samples = 8
+VisualInfo = 0x112 found SampleBuffers = 0 and samples = 0
+VisualInfo = 0x620 found SampleBuffers = 0 and samples = 0
+visualId of bestVisualInfo is 0x711
 Found the Support to 4.5 version
 Direct Rendering i.e. H.W. rendering supported
 OpenGL Vendor : AMD
-OpenGL Renderer : AMD Radeon Graphics (renoir, LLVM 15.0.6, DRM 3.49, 6.1.0-28-amd64)
-OpenGL version : 4.6 (Core Profile) Mesa 22.3.6
+OpenGL Renderer : AMD Radeon Graphics (radeonsi, renoir, ACO, DRM 3.64, 6.17.7-5-cachyos)
+OpenGL version : 4.6 (Core Profile) Mesa 25.2.7-cachyos1.2
 GLSL version : 4.60
-Number Of Supported Extension : 233
+Number Of Supported Extension : 241
 GL_AMD_conservative_depth
 GL_AMD_depth_clamp_separate
 GL_AMD_draw_buffers_blend
@@ -150,6 +136,7 @@ GL_ARB_stencil_texturing
 GL_ARB_sync
 GL_ARB_tessellation_shader
 GL_ARB_texture_barrier
+GL_ARB_texture_border_clamp
 GL_ARB_texture_buffer_object
 GL_ARB_texture_buffer_object_rgb32
 GL_ARB_texture_buffer_range
@@ -157,6 +144,7 @@ GL_ARB_texture_compression_bptc
 GL_ARB_texture_compression_rgtc
 GL_ARB_texture_cube_map_array
 GL_ARB_texture_filter_anisotropic
+GL_ARB_texture_filter_minmax
 GL_ARB_texture_float
 GL_ARB_texture_gather
 GL_ARB_texture_mirror_clamp_to_edge
@@ -192,6 +180,7 @@ GL_ATI_meminfo
 GL_ATI_texture_float
 GL_ATI_texture_mirror_once
 GL_EXT_EGL_image_storage
+GL_EXT_EGL_image_storage_compression
 GL_EXT_EGL_sync
 GL_EXT_abgr
 GL_EXT_blend_equation_separate
@@ -214,6 +203,7 @@ GL_EXT_polygon_offset_clamp
 GL_EXT_provoking_vertex
 GL_EXT_semaphore
 GL_EXT_semaphore_fd
+GL_EXT_shader_clock
 GL_EXT_shader_image_load_formatted
 GL_EXT_shader_image_load_store
 GL_EXT_shader_integer_mix
@@ -223,6 +213,7 @@ GL_EXT_texture_compression_dxt1
 GL_EXT_texture_compression_rgtc
 GL_EXT_texture_compression_s3tc
 GL_EXT_texture_filter_anisotropic
+GL_EXT_texture_filter_minmax
 GL_EXT_texture_integer
 GL_EXT_texture_mirror_clamp
 GL_EXT_texture_sRGB
@@ -231,6 +222,7 @@ GL_EXT_texture_sRGB_decode
 GL_EXT_texture_shadow_lod
 GL_EXT_texture_shared_exponent
 GL_EXT_texture_snorm
+GL_EXT_texture_storage
 GL_EXT_texture_swizzle
 GL_EXT_timer_query
 GL_EXT_transform_feedback
@@ -246,11 +238,13 @@ GL_KHR_no_error
 GL_KHR_parallel_shader_compile
 GL_KHR_robust_buffer_access_behavior
 GL_KHR_robustness
+GL_KHR_shader_subgroup
 GL_KHR_texture_compression_astc_ldr
 GL_KHR_texture_compression_astc_sliced_3d
 GL_MESA_framebuffer_flip_y
 GL_MESA_pack_invert
 GL_MESA_shader_integer_functions
+GL_MESA_texture_const_bandwidth
 GL_MESA_texture_signed_rgba
 GL_NVX_gpu_memory_info
 GL_NV_alpha_to_coverage_dither_control

@@ -1,5 +1,11 @@
 #include "window_manager.h"
 
+#include "./src/Renderer.h"
+
+// ====================================================================================================
+Renderer g_pScene;
+// ====================================================================================================
+
 #ifdef __GNUC__
 	typedef GLXContext (*glXCreateContextAttribsARBProc)(Display *, GLXFBConfig, GLXContext, Bool, const int *);
 	glXCreateContextAttribsARBProc glXCreateContextAttribsARB = NULL;
@@ -122,7 +128,7 @@ int window_manager::initialize()
 						visualInfo->visual,
 						AllocNone);
 	windowAttribute.event_mask = ExposureMask | KeyPressMask| StructureNotifyMask | FocusChangeMask | KeyReleaseMask |
-        ButtonPressMask | ButtonReleaseMask; //
+        ButtonPressMask | ButtonReleaseMask | PointerMotionMask | ButtonMotionMask; //
 
 	// 
 	colorMap = windowAttribute.colormap;
@@ -372,6 +378,17 @@ int window_manager::initGL()
 
 	glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
 
+	// enable depth test
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LEQUAL);
+
+	// initialize the scene
+	if (!g_pScene.init())
+	{
+		g_logger.log(logger::LogType::_ERROR_, "Failed to initialize the renderer\n");
+		return -1;
+	}
+
 	g_logger.log(logger::LogType::_INFO_, "OpenGL Initialization successfull\n");
 	return 0;
 }
@@ -450,6 +467,8 @@ void window_manager::process_events()
         XNextEvent(display, &event); // GetMessage()
 
         ImGui_ImplX11_EventHandler(event, &event);
+
+		g_pScene.process_events(event);
 
         switch (event.type)
         {
@@ -651,11 +670,14 @@ void window_manager::render()
     // code
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	// ImGui::ShowDemoWindow();
-
+	// draw the scene
+	g_pScene.render();
+	
 	ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
 	ImGui::Text("This is some useful text.");  
 	ImGui::Text("FPS : %.12f", ImGui::GetIO().Framerate);               // Display some text (you can use a format strings too)
 	ImGui::End();
+	g_pScene.render_ui();
 
 	// Start the Dear ImGui frame
     ImGui::Render();
@@ -680,6 +702,9 @@ void window_manager::uninitialize(){
 		ImGui_ImplWin32_Shutdown();
 	#endif
     ImGui::DestroyContext();
+
+	// uninitialize the scene
+	g_pScene.uninit();
 
 	#ifdef __GNUC__
     if (glxFBConfigs)

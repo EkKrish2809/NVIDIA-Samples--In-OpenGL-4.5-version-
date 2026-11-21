@@ -1,6 +1,6 @@
 rm ./bin/linux/*.o
 
-g++ -c -I/usr/include -I./imgui -g main.cpp Logger.cpp window_manager.cpp ./includes/imgui/imgui.cpp ./includes/imgui/imgui_impl_x11.cpp ./includes/imgui/imgui_impl_opengl3.cpp ./includes/imgui/imgui_draw.cpp ./includes/imgui/imgui_demo.cpp ./includes/imgui/imgui_widgets.cpp ./includes/imgui/imgui_tables.cpp
+g++ -c -I/usr/include -I./imgui -g main.cpp Logger.cpp window_manager.cpp ./src/Renderer.cpp ./src/first_scene.cpp ./includes/imgui/imgui.cpp ./includes/imgui/imgui_impl_x11.cpp ./includes/imgui/imgui_impl_opengl3.cpp ./includes/imgui/imgui_draw.cpp ./includes/imgui/imgui_demo.cpp ./includes/imgui/imgui_widgets.cpp ./includes/imgui/imgui_tables.cpp ./includes/utils/shader_helper.cpp ./includes/utils/camera.cpp
 
 mv *.o ./bin/linux/
 
