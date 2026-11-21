@@ -9,6 +9,7 @@
 *.dll
 *.so
 *.dylib
+*.out
 
 # Ignore CMake generated files
 CMakeFiles/
