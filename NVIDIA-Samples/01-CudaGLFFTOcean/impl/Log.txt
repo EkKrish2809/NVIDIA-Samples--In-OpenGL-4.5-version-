@@ -1,0 +1,21 @@
+INFO : Found number of FBConfigs are 10
+VisualInfo = 0x1631 found SampleBuffers = 0 and samples = 0
+VisualInfo = 0x1631 found SampleBuffers = 0 and samples = 0
+VisualInfo = 0x1631 found SampleBuffers = 1 and samples = 2
+VisualInfo = 0x1631 found SampleBuffers = 1 and samples = 2
+VisualInfo = 0x1631 found SampleBuffers = 1 and samples = 4
+VisualInfo = 0x1631 found SampleBuffers = 1 and samples = 4
+VisualInfo = 0x1631 found SampleBuffers = 1 and samples = 8
+VisualInfo = 0x1631 found SampleBuffers = 1 and samples = 8
+VisualInfo = 0x1631 found SampleBuffers = 1 and samples = 16
+VisualInfo = 0x1631 found SampleBuffers = 1 and samples = 16
+visualId of bestVisualInfo is 0x1631
+Found the Support to 4.6 version
+Direct Rendering i.e. H.W. rendering supported
+
+Vertex Ocean Shader Compilation Completed
+
+Fragment Ocean Shader Compilation Completed
+
+========================================
+Closing Log File
